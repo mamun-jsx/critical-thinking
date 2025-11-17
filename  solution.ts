@@ -1,5 +1,3 @@
-//? -------- Problem 1-----------
-
 const formatValue = <T>(input: T) => {
   if (typeof input === "string") {
     return input.toLocaleUpperCase();
@@ -10,8 +8,6 @@ const formatValue = <T>(input: T) => {
   }
 };
 
-//? -------- Problem 2-----------
-
 const getLength = <T>(input: T) => {
   if (Array.isArray(input) === true) {
     return input.length;
@@ -19,8 +15,6 @@ const getLength = <T>(input: T) => {
     return input.length;
   }
 };
-
-//? -------- Problem 3 -----------
 
 class Person {
   name: string;
@@ -33,9 +27,6 @@ class Person {
     return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
-
-
-//? --------------- Problem 4 -----------
 
 type Item = {
   // declare type
@@ -56,9 +47,6 @@ function filterByRating(input: Item[]) {
     .sort((a, b) => a.rating - b.rating); //make them low to heigh
 }
 
-
-//? --------------- Problem 5 -----------
-
 type User = {
   id: number;
   name: string;
@@ -77,9 +65,6 @@ function filterActiveUsers(input: User[]) {
   activeUser.push(...checkActive);
   return activeUser;
 }
-
-
-//? --------------- Problem 6 -----------
 
 interface Book {
   title: string;
@@ -101,9 +86,6 @@ function printBookDetails(input: Book) {
   );
 }
 
-
-//? --------------- Problem 7 -----------
-
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
 
@@ -112,9 +94,6 @@ function getUniqueValues(input1: number[], input2: number[]) {
   const uniqueValue = new Set(myArr);
   return Array.from(uniqueValue);
 }
-
-
-//? --------------- Problem 8 -----------
 
 const products = [
   { name: "Pen", price: 10, quantity: 2 },
@@ -130,8 +109,10 @@ function calculateTotalPrice(
     discount?: number;
   }[]
 ) {
-    
-  const totalPrice = input.reduce((acc, item) => acc + (item.price * item.quantity * (1 - (item.discount || 0) / 100)), 0)
+  const totalPrice = input.reduce(
+    (acc, item) =>
+      acc + item.price * item.quantity * (1 - (item.discount || 0) / 100),
+    0
+  );
   return totalPrice;
 }
-
