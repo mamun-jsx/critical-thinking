@@ -86,14 +86,42 @@ function printBookDetails(input: Book) {
   );
 }
 
-const array1 = [1, 2, 3, 4, 5];
-const array2 = [3, 4, 5, 6, 7];
 
-function getUniqueValues(input1: number[], input2: number[]) {
-  const myArr = [...input1, ...input2];
-  const uniqueValue = new Set(myArr);
-  return Array.from(uniqueValue);
-}
+
+const getUniqueValues = (input10: number[], input2: number[]) => {
+  const mixArr: number[] = [];
+
+  for (let i = 0; i < input10.length; i++) {
+    mixArr[i] = input10[i];
+  }
+
+  
+  for (let j = 0; j < input2.length; j++) {
+    mixArr[input10.length + j] = input2[j];
+  }
+
+  const uniqueValue: number[] = [];
+
+  for (let i = 0; i < mixArr.length; i++) {
+    let isDuplicated = false;
+
+    for (let j = 0; j < uniqueValue.length; j++) {
+      if (mixArr[i] === uniqueValue[j]) {
+        isDuplicated = true;
+        break;
+      }
+    }
+
+    if (!isDuplicated) {
+      uniqueValue[uniqueValue.length] = mixArr[i]; 
+    }
+  }
+
+  return uniqueValue;
+};
+
+
+
 
 const products = [
   { name: "Pen", price: 10, quantity: 2 },
