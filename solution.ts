@@ -29,22 +29,22 @@ class Person {
 }
 
 type Item = {
-  // declare type
+
   title: string;
   rating: number;
 };
 
 const books: Item[] = [
-  // assign type
+
   { title: "Book A", rating: 4.5 },
   { title: "Book B", rating: 3.2 },
   { title: "Book C", rating: 5.0 },
 ];
 function filterByRating(input: Item[]) {
-  // filter and return the books which are above 4 rating
+
   return input
     .filter((book) => book.rating >= 4)
-    .sort((a, b) => a.rating - b.rating); //make them low to heigh
+    .sort((a, b) => a.rating - b.rating); 
 }
 
 type User = {
